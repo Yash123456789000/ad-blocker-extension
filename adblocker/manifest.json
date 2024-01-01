@@ -1,0 +1,24 @@
+{
+    "name": "Quick Ad blocker",
+    "version": "1.0",
+    "description": "All adblocker",
+    "permissions": ["declarativeNetRequest", "tabs", "activeTab"],
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+                "id": "ruleset_1",
+                "enabled": true,
+                "path": "rules.json"
+            }
+        ]
+    },
+    "content_scripts": [{
+        "js": ["script.js"],
+        "run_at": "document_idle",
+        "matches": ["<all_urls>"]
+    }],
+    "icons": {
+        "128": "adblockerlogo.png"
+    },
+    "manifest_version": 3
+}
